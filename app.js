@@ -33,7 +33,7 @@ app.get("/football", (req ,res)=>{
        },
        {
              "name": "BK Häcken",
-             "points": 5,
+             "points": 3,
              "logo":"https://www.allsvenskan.se/lagen/bk-hacken/_/image/29528574-2d7b-43e2-9b91-89f3bfa74bdc:f981f4253c7e9711fe2c9449765cda15327af8aa/width-110/BK_H%C3%A4cken_logo.svg"
        },
        {
@@ -46,6 +46,39 @@ app.get("/football", (req ,res)=>{
     res.set('Content-Type', 'application/json');
     res.status(200).send(body)
  })
+
+
+ app.get("/top5", (req ,res)=>{
+      headers={"http_status":200, "cache-control":  "no-cache"}
+      body=
+      [
+            {
+                  "name": "Name1",
+                  "score": 5
+            },
+            {
+                  "name": "Name2",
+                  "score": 0
+            },
+            {
+                  "name": "Name3",
+                  "score": 0
+            },
+            {
+                  "name": "Name4",
+                  "score": 0
+            },
+            {
+                  "name": "Name5",
+                  "score": 0
+            }
+      
+       
+      ]
+  
+      res.set('Content-Type', 'application/json');
+      res.status(200).send(body)
+   })
 
 
 app.listen(PORT , ()=>{
